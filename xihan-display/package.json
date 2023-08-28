@@ -1,0 +1,39 @@
+{
+  "name": "xihan-display",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Xihan frontend project. A fast, lightweight, efficient, and dedicated development framework and new decentralized full scenario application software. Built based on DotNet and Vue.",
+  "author": {
+    "name": "ZhaiFanhua",
+    "email": "zhaifanhua@foxmail.com",
+    "url": "https://github.com/XiHanFun/XiHan.Display"
+  },
+  "license": "MulanPSL-2.0",
+  "homepage": "https://github.com/XiHanFun/XiHan.Display",
+  "repository": {
+    "url": "https://github.com/XiHanFun/XiHan.Display.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XiHanFun/XiHan.Display/issues"
+  },
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "dev": "vite --host",
+    "build": "vue-tsc && vite build",
+    "serve": "vite serve",
+    "preview": "vite preview",
+    "update-pkg": "ncu --deep -u",
+    "clean": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5",
+    "rimraf": "^5.0.1"
+  }
+}
