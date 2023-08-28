@@ -16,9 +16,11 @@
 
 - TypeScript；
 
-- Vue3；
+- Vue；
 
 - Vite；
+
+- Pinia；
 
 - Axios；
 
