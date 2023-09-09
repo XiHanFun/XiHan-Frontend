@@ -1,51 +1,43 @@
 <template>
-  <n-space>
-    <n-button strong secondary> Default </n-button>
-    <n-button strong secondary type="tertiary"> Tertiary </n-button>
-    <n-button strong secondary type="primary"> Primary </n-button>
-    <n-button strong secondary type="info"> Info </n-button>
-    <n-button strong secondary type="success"> Success </n-button>
-    <n-button strong secondary type="warning"> Warning </n-button>
-    <n-button strong secondary type="error"> Error </n-button>
-    <n-button strong secondary round> Default </n-button>
-    <n-button strong secondary round type="primary"> Primary </n-button>
-    <n-button strong secondary round type="info"> Info </n-button>
-    <n-button strong secondary round type="success"> Success </n-button>
-    <n-button strong secondary round type="warning"> Warning </n-button>
-    <n-button strong secondary round type="error"> Error </n-button>
-    <n-button strong secondary circle>
-      <template #icon>
-        <n-icon><cash-icon /></n-icon>
-      </template>
-    </n-button>
-    <n-button strong secondary circle type="primary">
-      <template #icon>
-        <n-icon><cash-icon /></n-icon>
-      </template>
-    </n-button>
-    <n-button strong secondary circle type="info">
-      <template #icon>
-        <n-icon><cash-icon /></n-icon>
-      </template>
-    </n-button>
-    <n-button strong secondary circle type="success">
-      <template #icon>
-        <n-icon><cash-icon /></n-icon>
-      </template>
-    </n-button>
-    <n-button strong secondary circle type="warning">
-      <template #icon>
-        <n-icon><cash-icon /></n-icon>
-      </template>
-    </n-button>
-    <n-button strong secondary circle type="error">
-      <template #icon>
-        <n-icon><cash-icon /></n-icon>
-      </template>
-    </n-button>
+  <n-space :size="24" align="center" item-style="display: flex;">
+    <n-badge :value="value" :max="15" :show="show">
+      <n-avatar />
+    </n-badge>
+    <n-badge :value="value" dot :show="show">
+      <n-avatar />
+    </n-badge>
+
+    <n-button-group>
+      <n-button @click="value = Math.min(16, value + 1)">
+        <template #icon>
+          <n-icon><md-add /></n-icon>
+        </template>
+      </n-button>
+      <n-button @click="value = Math.max(0, value - 1)">
+        <template #icon>
+          <n-icon><md-remove /></n-icon>
+        </template>
+      </n-button>
+    </n-button-group>
+
+    <n-switch v-model:value="show" />
   </n-space>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+import { MdAdd, MdRemove } from '@vicons/ionicons4'
+
+export default defineComponent({
+  components: {
+    MdAdd,
+    MdRemove
+  },
+  setup() {
+    return {
+      value: ref(5),
+      show: ref(true)
+    }
+  }
+})
 </script>
