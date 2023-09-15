@@ -28,15 +28,18 @@
   "scripts": {
     "bootstrap": "pnpm install",
     "dev": "vite --host",
+    "serve": "vite serve --host",
     "build": "run-p type-check build-only",
-    "serve": "vite serve",
     "preview": "vite preview",
     "update-pkg": "ncu --deep -u",
-    "cleanup": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules",
+    "clean:all": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:lib": "rimraf node_modules",
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "reinstall": " npm run clean:all&& npm run bootstrap",
     "format": "prettier --write src/"
   },
   "dependencies": {

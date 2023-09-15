@@ -1,10 +1,10 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 
 export default defineConfig({
   plugins: [
@@ -14,17 +14,22 @@ export default defineConfig({
       imports: [
         'vue',
         {
-          'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar']
-        }
-      ]
+          'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'],
+        },
+      ],
     }),
     Components({
-      resolvers: [NaiveUiResolver()]
-    })
+      resolvers: [NaiveUiResolver()],
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
-})
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  server: {
+    host: true,
+    port: VITE_PORT,
+    proxy: createProxy(VITE_PROXY),
+  },
+});

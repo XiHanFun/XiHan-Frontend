@@ -25,19 +25,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { MdAdd, MdRemove } from '@vicons/ionicons4'
+  import { defineComponent, ref } from 'vue';
+  import { MdAdd, MdRemove } from '@vicons/ionicons4';
 
-export default defineComponent({
-  components: {
-    MdAdd,
-    MdRemove
-  },
-  setup() {
-    return {
-      value: ref(5),
-      show: ref(true)
-    }
-  }
-})
+  export default defineComponent({
+    components: {
+      MdAdd,
+      MdRemove,
+    },
+    setup() {
+      return {
+        value: ref(5),
+        show: ref(true),
+      };
+    },
+  });
 </script>
