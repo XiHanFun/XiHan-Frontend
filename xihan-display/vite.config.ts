@@ -7,16 +7,9 @@ import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 
 export default defineConfig(({ command, mode }) => {
-  const root = process.cwd();
-  const env = loadEnv(mode, root);
-  const viteEnv = wrapperEnv(env);
-  const { VITE_PUBLIC_PATH, VITE_PORT, VITE_GLOB_PROD_MOCK, VITE_PROXY } = viteEnv;
-  const prodMock = VITE_GLOB_PROD_MOCK;
-  const isBuild = command === 'build';
   return {
     // vite 配置
     define: {
-      __APP_ENV__: JSON.stringify(env.APP_ENV),
     },
     plugins: [
       vue(),
@@ -40,8 +33,6 @@ export default defineConfig(({ command, mode }) => {
     },
     server: {
       host: true,
-      port: VITE_PORT,
-      proxy: createProxy(VITE_PROXY),
     },
   };
 });

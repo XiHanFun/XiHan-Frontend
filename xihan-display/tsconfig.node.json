@@ -1,12 +1,10 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
-  "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "nightwatch.conf.*", "playwright.config.*"],
   "compilerOptions": {
-    // 因为 esbuild 只执行没有类型信息的转译，它并不支持某些特性，如 const enum 和隐式类型导入。
-    "isolatedModules": true,
     "composite": true,
+    "skipLibCheck": true,
     "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "types": ["node"]
-  }
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts"]
 }
