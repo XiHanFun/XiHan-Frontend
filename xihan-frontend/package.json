@@ -36,26 +36,26 @@
   },
   "dependencies": {
     "@microsoft/signalr": "^8.0.0",
-    "axios": "^1.6.2",
+    "axios": "^1.6.5",
     "echarts": "^5.4.3",
-    "naive-ui": "^2.35.0",
+    "naive-ui": "^2.37.3",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "qrcode": "^1.5.3",
     "vfonts": "^0.0.3",
-    "vue": "^3.3.8",
-    "vue-i18n": "^9.6.5",
+    "vue": "^3.4.13",
+    "vue-i18n": "^9.9.0",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.4.1",
-    "eslint": "^8.53.0",
-    "prettier": "^3.1.0",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.1",
     "rimraf": "^5.0.5",
-    "stylelint": "^15.11.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0",
-    "vue-tsc": "^1.8.22"
+    "stylelint": "^16.1.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vue-tsc": "^1.8.27"
   },
   "packageManager": "pnpm@8.1.0"
 }
